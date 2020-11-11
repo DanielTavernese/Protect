@@ -1,0 +1,282 @@
+[
+  {
+    "name": "game_background",
+    "path": "images/background.png"
+  },
+  {
+    "name": "protect_logo",
+    "path": "images/protectlogo.png"
+  },
+  {
+    "name": "player_run_1",
+    "path": "images/run1.png"
+  },
+  {
+    "name": "player_run_2",
+    "path": "images/run2.png"
+  },
+  {
+    "name": "player_run_3",
+    "path": "images/run3.png"
+  },
+  {
+    "name": "player_run_4",
+    "path": "images/run4.png"
+  },
+  {
+    "name": "player_run_5",
+    "path": "images/run5.png"
+  },
+  {
+    "name": "player_run_6",
+    "path": "images/run6.png"
+  },
+  {
+    "name": "player_run_7",
+    "path": "images/run7.png"
+  },
+  {
+    "name": "flyer_1",
+    "path": "images/jetpack1.png"
+  },
+  {
+    "name": "flyer_2",
+    "path": "images/jetpack2.png"
+  },
+  {
+    "name": "flyer_3",
+    "path": "images/jetpack3.png"
+  },
+  {
+    "name": "flyer_4",
+    "path": "images/jetpack4.png"
+  },
+  {
+    "name": "flyer_5",
+    "path": "images/jetpack5.png"
+  },
+  {
+    "name": "flyer_6",
+    "path": "images/jetpack6.png"
+  },
+  {
+    "name": "flyer_7",
+    "path": "images/jetpack7.png"
+  },
+  {
+    "name": "player_attack_1",
+    "path": "images/attack1.png"
+  },
+  {
+    "name": "player_attack_2",
+    "path": "images/attack2.png"
+  },
+  {
+    "name": "player_attack_3",
+    "path": "images/attack3.png"
+  },
+  {
+    "name": "player_attack_4",
+    "path": "images/attack4.png"
+  },
+  {
+    "name": "player_attack_5",
+    "path": "images/attack5.png"
+  },
+  {
+    "name": "player_attack_6",
+    "path": "images/attack6.png"
+  },
+  {
+    "name": "player_dizzy_1",
+    "path": "images/dizzy1.png"
+  },
+  {
+    "name": "player_dizzy_2",
+    "path": "images/dizzy2.png"
+  },
+  {
+    "name": "player_dizzy_3",
+    "path": "images/dizzy3.png"
+  },
+  {
+    "name": "player_die_1",
+    "path": "images/die1.png"
+  },
+  {
+    "name": "player_die_2",
+    "path": "images/die2.png"
+  },
+  {
+    "name": "player_die_3",
+    "path": "images/die3.png"
+  },
+  {
+    "name": "castle1",
+    "path": "images/castle2.png"
+  },
+  {
+    "name": "castle2",
+    "path": "images/castle1.png"
+  },
+  {
+    "name": "castle3",
+    "path": "images/castle3.png"
+  },
+  {
+    "name": "castle4",
+    "path": "images/castle4.png"
+  },
+  {
+    "name": "castle5",
+    "path": "images/castle5.png"
+  },
+  {
+    "name": "castle_banner",
+    "path": "images/banner.png"
+  },
+  {
+    "name": "barrel",
+    "path": "images/barrel.png"
+  },
+  {
+    "name": "tower_logo",
+    "path": "images/tower_sprite.png"
+  },
+  {
+    "name": "finger_player",
+    "path": "images/start_guy2.png"
+  },
+  {
+    "name": "falling_player",
+    "path": "images/falling.png"
+  },
+  {
+    "name": "pull_up_player",
+    "path": "images/air1.png"
+  },
+  {
+    "name": "info_button",
+    "path": "images/infobtn.png"
+  },
+  {
+    "name": "audio_button_on",
+    "path": "images/audiobtn.png"
+  },
+  {
+    "name": "audio_button_off",
+    "path": "images/audiocancelbtn.png"
+  },
+  {
+    "name": "home_button",
+    "path": "images/home_button.png"
+  },
+  {
+    "name": "twitter_button",
+    "path": "images/twitterbutton.png"
+  },
+  {
+    "name": "instagram_button",
+    "path": "images/instabutton.png"
+  },
+  {
+    "name": "info_background",
+    "path": "images/how_to_play.png"
+  },
+  {
+    "name": "inventory",
+    "path": "images/inventory.png"
+  },
+  {
+    "name": "coin",
+    "path": "images/coin.png"
+  },
+  {
+    "name": "ninja_icon",
+    "path": "images/ninja_icon.png"
+  },
+  {
+    "name": "crown",
+    "path": "images/crown.png"
+  },
+  {
+    "name": "red_rect",
+    "path": "images/red_rectangle.png"
+  },
+  {
+    "name": "king_idle_1",
+    "path": "images/kingidle1.png"
+  },
+  {
+    "name": "king_idle_2",
+    "path": "images/kingidle2.png"
+  },
+  {
+    "name": "king_idle_3",
+    "path": "images/kingidle3.png"
+  },
+  {
+    "name": "king_idle_4",
+    "path": "images/kingidle4.png"
+  },
+  {
+    "name": "king_idle_5",
+    "path": "images/kingidle5.png"
+  },
+  {
+    "name": "king_idle_6",
+    "path": "images/kingidle6.png"
+  },
+  {
+    "name": "king_idle_7",
+    "path": "images/kingidle7.png"
+  },
+  {
+    "name": "king_idle_8",
+    "path": "images/kingidle8.png"
+  },
+  {
+    "name": "king_idle_9",
+    "path": "images/kingidle9.png"
+  },
+  {
+  "name": "king_idle_10",
+  "path": "images/kingidle10.png"
+  },
+  {
+    "name": "king_idle_11",
+    "path": "images/kingidle11.png"
+  },
+  {
+    "name": "bomb",
+    "path": "images/bomb.png"
+  },
+  {
+    "name": "arrow",
+    "path": "images/arrow.png"
+  },
+  {
+    "name": "projectile_circle",
+    "path": "images/radius.png"
+  },
+  {
+    "name": "projectile",
+    "path": "images/projectile.png"
+  },
+  {
+    "name": "aller_bd",
+    "path": "fonts/Aller_Bd.ttf"
+  },
+  {
+    "name": "score_font",
+    "path": "fonts/score_font.ttf"
+  },
+  {
+    "name": "button_sound",
+    "path": "audio/button_click.mp3"
+  },
+  {
+    "name": "fall_sound",
+    "path": "audio/fall.mp3"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "name": "player_run",
+    "paths": [
+      "player_run_1",
+      "player_run_2",
+      "player_run_3",
+      "player_run_4",
+      "player_run_5",
+      "player_run_6",
+      "player_run_7"
+    ]
+  },
+  {
+    "name": "player_attack",
+    "paths": [
+      "player_attack_1",
+      "player_attack_2",
+      "player_attack_3",
+      "player_attack_4",
+      "player_attack_5",
+      "player_attack_6"
+    ]
+  },
+  {
+    "name": "player_dizzy",
+    "paths": [
+      "player_dizzy_1",
+      "player_dizzy_2",
+      "player_dizzy_3"
+    ]
+  },
+  {
+    "name": "player_die",
+    "paths": [
+      "player_die_1",
+      "player_die_2",
+      "player_die_3"
+    ]
+  },
+  {
+    "name": "flying",
+    "paths": [
+      "flyer_1",
+      "flyer_2",
+      "flyer_3",
+      "flyer_4",
+      "flyer_5",
+      "flyer_6"
+    ]
+  },
+  {
+    "name": "king_idle",
+    "paths": [
+      "king_idle_1",
+      "king_idle_2",
+      "king_idle_3",
+      "king_idle_4",
+      "king_idle_5",
+      "king_idle_6",
+      "king_idle_7",
+      "king_idle_8",
+      "king_idle_9",
+      "king_idle_10",
+      "king_idle_11"
+    ]
+  }
+]
