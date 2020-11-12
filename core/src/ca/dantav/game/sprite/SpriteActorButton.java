@@ -35,7 +35,6 @@ public class SpriteActorButton extends SpriteActor {
                     @Override
                     public void execute() {
                         touchUpEvent(event, x, y, pointer, button);
-
                     }
 
                     @Override

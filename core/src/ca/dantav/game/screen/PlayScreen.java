@@ -35,8 +35,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
+import java8.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import java8.util.stream.StreamSupport;
 
 public class PlayScreen extends GameScreen {
 
@@ -127,7 +130,7 @@ public class PlayScreen extends GameScreen {
     @Override
     public void dispose() {
         castle.unregister();
-        getCastleDefense().getEntityManager().getEntityList().forEach((Entity e) -> getCastleDefense().getEntityManager().unregister(e));
+        StreamSupport.stream(getCastleDefense().getEntityManager().getEntityList()).forEach((Entity e) -> getCastleDefense().getEntityManager().unregister(e));
         super.dispose();
     }
 
@@ -159,14 +162,14 @@ public class PlayScreen extends GameScreen {
         scoreText.setText(getCastleDefense().getScore());
         scoreText.setX(scoreText.getOriginX() - ((score.length()-1) * 15));
 
-        getCastleDefense().getEntityManager().getEntityList().stream().filter(Objects::nonNull).forEach(Entity::update);
+        StreamSupport.stream(getCastleDefense().getEntityManager().getEntityList()).filter(Objects::nonNull).forEach(Entity::update);
         fighterSpawn.update();
     }
 
     @Override
     public void render(ShapeRenderer shapeRenderer) {
         super.render(shapeRenderer);
-        getCastleDefense().getEntityManager().getEntityList().stream().forEach((Entity e) -> e.draw(shapeRenderer, getStage().getCamera()));
+        StreamSupport.stream(getCastleDefense().getEntityManager().getEntityList()).forEach((Entity e) -> e.draw(shapeRenderer, getStage().getCamera()));
         showHealth();
     }
 

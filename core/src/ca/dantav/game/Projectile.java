@@ -7,10 +7,11 @@ import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import ca.dantav.game.screen.PlayScreen;
 import ca.dantav.game.sprite.SpriteActor;
+import java8.util.stream.StreamSupport;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+import java8.util.Optional;
 import java.util.function.Consumer;
 
 public class Projectile extends Entity {
@@ -26,7 +27,7 @@ public class Projectile extends Entity {
 
     @Override
     public void update() {
-        Optional<Attacker> candidate = getPlayScreen().getCastleDefense().getEntityManager().getAttackers().stream().filter((Attacker a) -> a.overlaps(getSpriteActor())).findFirst();
+        Optional<Attacker> candidate = StreamSupport.stream(getPlayScreen().getCastleDefense().getEntityManager().getAttackers()).filter((Attacker a) -> a.overlaps(getSpriteActor())).findFirst();
 
         if(candidate.isPresent() && !candidate.get().isDead()) {
             candidate.get().startDeath();

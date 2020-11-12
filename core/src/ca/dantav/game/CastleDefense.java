@@ -72,7 +72,7 @@ public class CastleDefense extends ApplicationAdapter {
 		boolean muted = preferences.getBoolean("muted", false);
 		this.muted = muted;
 
-		this.currentScreen = new EndScreen(this);
+		this.currentScreen = new LoadScreen(this);
 
 		currentScreen.start();
 	}

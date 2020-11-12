@@ -16,8 +16,9 @@ import ca.dantav.game.sprite.SpriteActor;
 import ca.dantav.game.utility.GameConstants;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+
+import java8.util.stream.Collectors;
+import java8.util.stream.StreamSupport;
 
 public class Fighter extends Attacker {
 
@@ -114,7 +115,7 @@ public class Fighter extends Attacker {
     }
 
     private King findClosestKing() {
-        List<Entity> kingEntitites = getPlayScreen().getCastleDefense().getEntityManager().getEntityList().stream().filter((Entity e) -> e instanceof King).collect(Collectors.toList());
+        List<Entity> kingEntitites = StreamSupport.stream(getPlayScreen().getCastleDefense().getEntityManager().getEntityList()).filter((Entity e) -> e instanceof King).collect(Collectors.toList());
         if(!kingEntitites.isEmpty()) {
             Entity closest = kingEntitites.get(0);
             for(int i = 1; i < kingEntitites.size(); i++) {

@@ -2,7 +2,8 @@ package ca.dantav.game.timer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+
+import java8.util.stream.StreamSupport;
 
 /*
 Game should operate in 60 fps meaning 1 tick = 1/60 seconds
@@ -20,30 +21,26 @@ public final class GameTimerManager {
 
     public void update() {
 
-        new ArrayList<GameTimer>(gameTimerList).stream().forEach(new Consumer<GameTimer>() {
+        StreamSupport.stream(new ArrayList<GameTimer>(gameTimerList)).forEach(gameTimer -> {
 
-            @Override
-            public void accept(GameTimer gameTimer) {
-
-                if(gameTimer.stoppingCondition()) {
-                    gameTimer.setRunning(false);
-                    gameTimer.end();
-                }
-
-                if(!gameTimer.isRunning()) {
-                    toRemove.add(gameTimer);
-                    return;
-                }
-
-                if(gameTimer.getCurrTicks() <= 0) {
-                    gameTimer.execute();
-                    gameTimer.setCurrTicks(gameTimer.getTicks());
-                    gameTimer.setTimesExecuted(gameTimer.getTimesExecuted() + 1);
-                    return;
-                }
-
-                gameTimer.setCurrTicks(gameTimer.getCurrTicks() - 1);
+            if(gameTimer.stoppingCondition()) {
+                gameTimer.setRunning(false);
+                gameTimer.end();
             }
+
+            if(!gameTimer.isRunning()) {
+                toRemove.add(gameTimer);
+                return;
+            }
+
+            if(gameTimer.getCurrTicks() <= 0) {
+                gameTimer.execute();
+                gameTimer.setCurrTicks(gameTimer.getTicks());
+                gameTimer.setTimesExecuted(gameTimer.getTimesExecuted() + 1);
+                return;
+            }
+
+            gameTimer.setCurrTicks(gameTimer.getCurrTicks() - 1);
         });
 
         gameTimerList.removeAll(toRemove);

@@ -9,7 +9,8 @@ import ca.dantav.game.Entity;
 import ca.dantav.game.screen.PlayScreen;
 import ca.dantav.game.utility.GameConstants;
 
-import java.util.Objects;
+import java8.util.stream.StreamSupport;
+import java8.util.Objects;
 
 public abstract class SpriteHoverActor extends SpriteActor {
 
@@ -37,7 +38,7 @@ public abstract class SpriteHoverActor extends SpriteActor {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 
-                boolean overlaps = playScreen.getCastleDefense().getEntityManager().getEntityList().stream().filter(Objects::nonNull).anyMatch((Entity e) -> overlaps(e));
+                boolean overlaps = StreamSupport.stream(playScreen.getCastleDefense().getEntityManager().getEntityList()).filter(Objects::nonNull).anyMatch((Entity e) -> overlaps(e));
 
                 if(overlaps) {
                     remove();

@@ -3,7 +3,8 @@ package ca.dantav.game;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import java8.util.stream.StreamSupport;
 
 public class EntityManager {
 
@@ -25,7 +26,7 @@ public class EntityManager {
 
     public List<Attacker> getAttackers() {
         List<Attacker> attackers = new ArrayList<Attacker>();
-        getEntityList().stream().filter((Entity e) -> e instanceof Attacker).forEach((Entity e) -> attackers.add((Attacker) e));
+        StreamSupport.stream(getEntityList()).filter((Entity e) -> e instanceof Attacker).forEach((Entity e) -> attackers.add((Attacker) e));
         return attackers;
     }
 

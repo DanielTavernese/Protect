@@ -108,15 +108,14 @@ public class StartScreen extends GameScreen {
 
                 AtomicBoolean hit = new AtomicBoolean(false);
 
-                Arrays.stream(getStage().getActors().toArray()).filter(Objects::nonNull).forEach((Consumer<Actor>) actor -> {
-
+                for(Actor actor : getStage().getActors().toArray()) {
                     Actor hitActor = getStage().hit(x, y, true);
 
                     if(hitActor != null) {
                         hit.set(true);
                         return;
                     }
-                });
+                }
 
                 if((!hit.get())) {
                     getCastleDefense().switchScreen(new PlayScreen(getCastleDefense()));

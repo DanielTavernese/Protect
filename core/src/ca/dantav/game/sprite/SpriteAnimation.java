@@ -2,9 +2,9 @@ package ca.dantav.game.sprite;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.function.Consumer;
+import java8.util.Objects;
+import java8.util.J8Arrays;
+import java8.util.function.Consumer;
 
 public class SpriteAnimation {
 
@@ -67,28 +67,29 @@ public class SpriteAnimation {
     }
 
     public void resize(float scale) {
-        Arrays.stream(sprites).filter(Objects::nonNull).forEach((Sprite s) -> s.setScale(scale));
+        J8Arrays.stream(sprites).filter(Objects::nonNull).forEach((Sprite s) -> s.setScale(scale));
     }
     public void setPosition(float x, float y) {
         this.x = x;
         this.y = y;
         spriteActor.setPosition(x, y);
-        Arrays.stream(sprites).filter(Objects::nonNull).forEach((Consumer<Sprite>) s -> {
+
+        J8Arrays.stream(sprites).filter(Objects::nonNull).forEach(s -> {
             s.setX(x);
             s.setY(y);
         });
     }
 
     public void rotateSprite(float angle) {
-        Arrays.stream(sprites).filter(Objects::nonNull).forEach((Sprite s) -> s.rotate(angle));
+        J8Arrays.stream(sprites).filter(Objects::nonNull).forEach((Sprite s) -> s.rotate(angle));
 }
 
     public void flipHorizontal() {
-        Arrays.stream(sprites).forEach((Sprite s) -> s.flip(true, false));
+        J8Arrays.stream(sprites).forEach((Sprite s) -> s.flip(true, false));
     }
 
     public void scale(float scaleFactor) {
-        Arrays.stream(sprites).filter(Objects::nonNull).forEach((Sprite s) -> s.setScale(scaleFactor));
+        J8Arrays.stream(sprites).filter(Objects::nonNull).forEach((Sprite s) -> s.setScale(scaleFactor));
     }
 
     public int loopAmount() {

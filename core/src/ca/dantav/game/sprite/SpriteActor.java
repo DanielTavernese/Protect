@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 
-import java.util.Arrays;
+import java8.util.J8Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
@@ -40,7 +40,7 @@ public class SpriteActor extends Actor {
 
         AtomicBoolean hit = new AtomicBoolean(false);
 
-        Arrays.stream(getStage().getActors().toArray()).forEach((Consumer<Actor>) other -> {
+        J8Arrays.stream(getStage().getActors().toArray()).forEach(other -> {
             if(getX() < other.getX() + other
                     .getWidth() && getX() + getWidth() > other.getX() &&
                     getY() < other.getY() + other.getHeight() && getY() + getHeight() > other.getY()) {

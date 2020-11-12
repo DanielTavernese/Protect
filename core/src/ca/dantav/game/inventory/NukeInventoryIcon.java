@@ -8,6 +8,7 @@ import ca.dantav.game.Entity;
 import ca.dantav.game.screen.PlayScreen;
 import ca.dantav.game.timer.GameTimer;
 import ca.dantav.game.utility.GameConstants;
+import java8.util.stream.StreamSupport;
 
 import java.util.Locale;
 
@@ -49,7 +50,7 @@ public class NukeInventoryIcon extends InventoryIcon {
 
             @Override
             public void end() {
-                getPlayScreen().getCastleDefense().getEntityManager().getAttackers().stream().forEach((Attacker a) -> a.startDeath());
+                StreamSupport.stream(getPlayScreen().getCastleDefense().getEntityManager().getAttackers()).forEach((Attacker a) -> a.startDeath());
                 getButton().setVisible(true);
                 nukeTimer.setVisible(false);
                 nuking = false;

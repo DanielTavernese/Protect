@@ -6,7 +6,7 @@ import ca.dantav.game.screen.PlayScreen;
 import ca.dantav.game.sprite.SpriteActor;
 import ca.dantav.game.utility.GameConstants;
 
-import java.util.Arrays;
+import java8.util.J8Arrays;
 
 /*
 Holds all castle parts
@@ -25,7 +25,7 @@ public class Castle {
     }
 
     public boolean hitEntity(Entity entity) {
-        return Arrays.stream(castle).anyMatch((CastlePart c) -> c.overlaps(entity));
+        return J8Arrays.stream(castle).anyMatch((CastlePart c) -> c.overlaps(entity));
     }
 
     public void register() {
@@ -49,7 +49,7 @@ public class Castle {
         topCastleThree.setPosition(0, topCastleTwo.getY() + topCastleThree.getHeight());
         castle[4] = new CastlePart(new SpriteActor((topCastleThree)), playScreen);
 
-        Arrays.stream(castle).forEach((CastlePart c) -> playScreen.getCastleDefense().getEntityManager().register(c));
+        J8Arrays.stream(castle).forEach((CastlePart c) -> playScreen.getCastleDefense().getEntityManager().register(c));
 
     }
 
@@ -58,7 +58,7 @@ public class Castle {
     }
 
     public void unregister() {
-        Arrays.stream(castle).forEach((CastlePart c) -> playScreen.getCastleDefense().getEntityManager().unregister(c));
+        J8Arrays.stream(castle).forEach((CastlePart c) -> playScreen.getCastleDefense().getEntityManager().unregister(c));
     }
 
     public void setHealth(int health) {
