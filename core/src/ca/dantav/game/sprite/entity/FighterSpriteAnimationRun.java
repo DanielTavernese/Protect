@@ -58,7 +58,7 @@ public final class FighterSpriteAnimationRun extends EntitySpriteAnimationRun {
             case DIZZY:
                 dizzyAnimation.setPosition(fighter.getX(), fighter.getY());
                 dizzyAnimation.getAndIncrement();
-                if(dizzyAnimation.loopAmount() >= 2) {
+                if(dizzyAnimation.loopAmount() >= 6) {
                     dizzyAnimation.reset();
                     fighter.setStance(Fighter.FighterStance.WALKING);
                 }

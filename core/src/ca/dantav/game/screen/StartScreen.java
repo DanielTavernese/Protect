@@ -106,21 +106,21 @@ public class StartScreen extends GameScreen {
             @Override
             public void clicked(InputEvent event, float x, float y) {
 
-                AtomicBoolean hit = new AtomicBoolean(false);
 
                 for(Actor actor : getStage().getActors().toArray()) {
                     Actor hitActor = getStage().hit(x, y, true);
 
-                    if(hitActor != null) {
-                        hit.set(true);
+                    if(hitActor == null) {
+                        continue;
+                    }
+                    if(hitActor.equals(audioButtonActor) || hitActor.equals(infoButtonActor)) {
                         return;
                     }
                 }
 
-                if((!hit.get())) {
                     getCastleDefense().switchScreen(new PlayScreen(getCastleDefense()));
                     getCastleDefense().playSound(getCastleDefense().getAssets().get("button_sound", Sound.class));
-                }
+
             }
         });
 

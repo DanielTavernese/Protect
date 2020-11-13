@@ -69,11 +69,16 @@ public class Fighter extends Attacker {
         if(!stance.equals(FighterStance.WALKING) && !stance.equals(FighterStance.ATTACKING)) {
             return;
         }
+
         stance = FighterStance.PULLED_UP;
     }
 
     @Override
     public void upTouch() {
+        if(!stance.equals(FighterStance.PULLED_UP)) {
+            return;
+        }
+
         stance = FighterStance.FALLING;
         Vector2 adjustedPos = getPlayScreen().getStage().screenToStageCoordinates(new Vector2(
                 Gdx.input.getX(), Gdx.input.getY()));
@@ -175,6 +180,7 @@ public class Fighter extends Attacker {
                 transform(0, -1 * (float) (getPlayScreen().getStage().getHeight() * GameConstants.FALL_SPEED * Gdx.graphics.getDeltaTime()));
                 if(getY() <= getPlayScreen().getStage().getHeight() * GameConstants.FLOOR_HEIGHT_MODIFER) {
                     getPlayScreen().getCastleDefense().playSound(getPlayScreen().getCastleDefense().getAssets().get("fall_sound", Sound.class));
+                    setPosition(getX(), getPlayScreen().getStage().getHeight() * GameConstants.FLOOR_HEIGHT_MODIFER);
                     stance = FighterStance.WALKING;
                     damage();
 
