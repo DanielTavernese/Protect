@@ -26,10 +26,16 @@ public abstract class InventoryIcon {
             this.button = new SpriteActorButton(playScreen.getCastleDefense(), sprite) {
                 @Override
                 public void touchUpEvent(InputEvent event, float x, float y, int pointer, int button) {
+                    if(playScreen.getCastleDefense().getCoins() < getCoinAmount()) {
+                        return;
+                    }
+                    playScreen.getCastleDefense().setCoins(playScreen.getCastleDefense().getCoins() - getCoinAmount());
                     execute();
                 }
             };
     }
+
+    public abstract int getCoinAmount();
 
     public void register() {
         playScreen.getStage().addActor(button);

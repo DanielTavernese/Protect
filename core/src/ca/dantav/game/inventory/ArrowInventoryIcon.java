@@ -16,6 +16,11 @@ public class ArrowInventoryIcon extends InventoryIcon{
     }
 
     @Override
+    public int getCoinAmount() {
+        return 25;
+    }
+
+    @Override
     public void execute() {
         //testing
         SpriteHoverActor spriteHoverActor = new SpriteHoverActor(new Sprite(getPlayScreen().getCastleDefense().getAssets().get("projectile_circle", Texture.class)), getPlayScreen()) {

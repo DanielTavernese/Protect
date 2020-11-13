@@ -15,6 +15,11 @@ public class CrownInventoryIcon extends InventoryIcon {
     }
 
     @Override
+    public int getCoinAmount() {
+        return 25;
+    }
+
+    @Override
     public void execute() {
         //testing
         SpriteHoverActor spriteHoverActor = new SpriteHoverActor(new Sprite(getPlayScreen().getCastleDefense().getAssets().get("king_idle_1", Texture.class)), getPlayScreen()) {

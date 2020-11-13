@@ -278,5 +278,13 @@
   {
     "name": "fall_sound",
     "path": "audio/fall.mp3"
+  },
+  {
+    "name": "attack_sound",
+    "path": "audio/attack.mp3"
+  },
+  {
+    "name": "explode_sound",
+    "path": "audio/explode.mp3"
   }
 ]

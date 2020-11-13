@@ -72,6 +72,14 @@ public class CastleDefense extends ApplicationAdapter {
 		boolean muted = preferences.getBoolean("muted", false);
 		this.muted = muted;
 
+		//load coins
+		if(!GameConstants.GIVE_COINS) {
+			Preferences coinsPreferences = Gdx.app.getPreferences("coins");
+			this.coins = coinsPreferences.getInteger("coins", 0);
+		} else {
+			this.coins = 10000;
+		}
+
 		this.currentScreen = new LoadScreen(this);
 
 		currentScreen.start();

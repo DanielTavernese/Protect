@@ -201,6 +201,7 @@ public class Fighter extends Attacker {
         } else {
             king.setHealth(king.getHealth() - 2);
         }
+        getPlayScreen().getCastleDefense().playSound(getPlayScreen().getCastleDefense().getAssets().get("attack_sound", Sound.class));
     }
 
     private void damage() {

@@ -1,7 +1,10 @@
 package ca.dantav.game;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+
+import ca.dantav.game.screen.EndScreen;
 import ca.dantav.game.screen.PlayScreen;
 import ca.dantav.game.sprite.SpriteActor;
 import ca.dantav.game.utility.GameConstants;

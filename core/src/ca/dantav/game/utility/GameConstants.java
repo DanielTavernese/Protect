@@ -10,6 +10,8 @@ public final class GameConstants {
 
     public static final String INSTAGRAM_URL = "https://www.instagram.com/tavtechgames/";
 
+    public static final boolean GIVE_COINS = false;
+
     public static final float ATTACKER_SCALE_SPRITE = 0.7f;
 
     public static final int ATTACKER_MOVEMENT_SPEED = 80;

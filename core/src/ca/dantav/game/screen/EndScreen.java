@@ -65,6 +65,12 @@ public class EndScreen extends GameScreen {
         String scoreText = String.valueOf(getCastleDefense().getScore());
         addFontToScreen(font, scoreText, Color.BLACK,383 - ((scoreText.length()-1) * 10), (float) (getStage().getHeight() * 0.7), 1.5f);
 
+        if(!GameConstants.GIVE_COINS) {
+            Preferences coinPreferences = Gdx.app.getPreferences("coins");
+            coinPreferences.putInteger("coins", getCastleDefense().getCoins());
+            coinPreferences.flush();
+        }
+
         Preferences preferences = Gdx.app.getPreferences("highScore");
 
         int highscore = preferences.getInteger("highScore", 0);

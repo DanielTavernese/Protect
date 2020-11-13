@@ -24,6 +24,11 @@ public class NukeInventoryIcon extends InventoryIcon {
     }
 
     @Override
+    public int getCoinAmount() {
+        return 50;
+    }
+
+    @Override
     public void execute() {
 
         if(nuking) {

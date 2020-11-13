@@ -2,6 +2,7 @@ package ca.dantav.game.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -110,7 +111,8 @@ public class PlayScreen extends GameScreen {
         addSpriteToScreen(coin, 1, getStage().getHeight() - ((float) (towerSprite.getHeight() * 1.1)) - coin.getHeight());
 
         BitmapFont coinFont = getCastleDefense().getAssets().get("score_font", BitmapFont.class);
-        coinText = (Label) addFontToScreen(coinFont, "" + getCastleDefense().getCoins(), Color.WHITE, coin.getX() + 35, coin.getY() - (float) (getStage().getHeight() * 0.04), 0.6f).getChild(0);
+        coinText = (Label) addFontToScreen(coinFont, "" + getCastleDefense().getCoins(), Color.WHITE, (coin.getX() + 35 - ((String.valueOf(getCastleDefense().getCoins())).length() * 6)),
+                coin.getY() - (float) (getStage().getHeight() * 0.04), 0.6f).getChild(0);
 
         BitmapFont scoreFont = getCastleDefense().getAssets().get("score_font", BitmapFont.class);
         scoreText = (Label) addFontToScreen(coinFont, "" + getCastleDefense().getScore(), Color.WHITE, getStage().getWidth() - 60, (float) (coin.getY() * 1.02f), 1.2f).getChild(0);
@@ -152,6 +154,7 @@ public class PlayScreen extends GameScreen {
     public void update() {
         if(castle.getHealth() <= 0) {
             getCastleDefense().switchScreen(new EndScreen(getCastleDefense()));
+            getCastleDefense().playSound(getCastleDefense().getAssets().get("explode_sound", Sound.class));
             return;
         }
 
@@ -162,6 +165,8 @@ public class PlayScreen extends GameScreen {
         scoreText.setText(getCastleDefense().getScore());
         scoreText.setX(scoreText.getOriginX() - ((score.length()-1) * 15));
 
+        showHealth();
+
         StreamSupport.stream(getCastleDefense().getEntityManager().getEntityList()).filter(Objects::nonNull).forEach(Entity::update);
         fighterSpawn.update();
     }
@@ -170,7 +175,6 @@ public class PlayScreen extends GameScreen {
     public void render(ShapeRenderer shapeRenderer) {
         super.render(shapeRenderer);
         StreamSupport.stream(getCastleDefense().getEntityManager().getEntityList()).forEach((Entity e) -> e.draw(shapeRenderer, getStage().getCamera()));
-        showHealth();
     }
 
     @Override
