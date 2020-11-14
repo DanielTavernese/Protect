@@ -64,7 +64,7 @@ public class King extends Entity {
     public void setHealth(int health) {
         super.setHealth(health);
         if(getHealth() <= 0) {
-            getPlayScreen().getCastleDefense().getEntityManager().unregister(this);
+            stance = KingStance.DIE;
         }
     }
 

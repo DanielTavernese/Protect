@@ -24,7 +24,9 @@ public class SpriteActorButton extends SpriteActor {
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 getSprite().setScale(1.2f);
-                game.playSound(sound);
+                if(playSound()) {
+                    game.playSound(sound);
+                }
                 return true;
             }
 
@@ -49,6 +51,10 @@ public class SpriteActorButton extends SpriteActor {
 
     public void touchUpEvent(InputEvent event, float x, float y, int pointer, int button) {
 
+    }
+
+    public boolean playSound() {
+        return true;
     }
 
 

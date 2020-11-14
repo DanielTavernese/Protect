@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import ca.dantav.game.Entity;
 import ca.dantav.game.King;
 import ca.dantav.game.screen.PlayScreen;
-import ca.dantav.game.sprite.SpriteActor;
 import ca.dantav.game.sprite.SpriteHoverActor;
 
 public class CrownInventoryIcon extends InventoryIcon {

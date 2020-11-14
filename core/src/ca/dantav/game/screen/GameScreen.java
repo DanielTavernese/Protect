@@ -2,6 +2,7 @@ package ca.dantav.game.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -96,16 +97,25 @@ public abstract class GameScreen {
      * Rendering stage onto the screen
      */
     public void render(ShapeRenderer shapeRenderer) {
+        Gdx.gl.glClearColor(getBackgroundColor().r, getBackgroundColor().g, getBackgroundColor().b, getBackgroundColor().a);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         stage.getBatch().setProjectionMatrix(stage.getCamera().combined);
 
         stage.act(Gdx.graphics.getDeltaTime());
 
-        stage.getBatch().begin();
-        getBackground().setSize(getStage().getCamera().viewportWidth, getStage().getCamera().viewportHeight);
-        getBackground().draw(getStage().getBatch());
-        getStage().getBatch().end();
+        if(getBackground() != null) {
+            stage.getBatch().begin();
+            getBackground().setSize(getStage().getCamera().viewportWidth, getStage().getCamera().viewportHeight);
+            getBackground().draw(getStage().getBatch());
+            getStage().getBatch().end();
+        }
 
         stage.draw();
+    }
+
+    public Color getBackgroundColor() {
+        return Color.BLACK;
     }
 
     public abstract Sprite getBackground();

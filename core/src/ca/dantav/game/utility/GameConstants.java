@@ -27,8 +27,6 @@ public final class GameConstants {
 
     public static final boolean SHOW_FRAMES_PER_SECOND = false;
 
-    public static final int MAX_PLAYERS = 6;
-
     public static final int WORLD_HEIGHT = 400;
 
     public static final float FLOOR_HEIGHT_MODIFER = 0.1f;

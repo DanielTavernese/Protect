@@ -1,5 +1,6 @@
 package ca.dantav.game.inventory;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -24,9 +25,16 @@ public abstract class InventoryIcon {
 
             sprite.setPosition(getX(), getY());
             this.button = new SpriteActorButton(playScreen.getCastleDefense(), sprite) {
+
+                @Override
+                public boolean playSound() {
+                    return playScreen.getCastleDefense().getCoins() >= getCoinAmount();
+                }
+
                 @Override
                 public void touchUpEvent(InputEvent event, float x, float y, int pointer, int button) {
                     if(playScreen.getCastleDefense().getCoins() < getCoinAmount()) {
+                        playScreen.getCastleDefense().playSound(playScreen.getCastleDefense().getAssets().get("fail_sound", Sound.class));
                         return;
                     }
                     playScreen.getCastleDefense().setCoins(playScreen.getCastleDefense().getCoins() - getCoinAmount());

@@ -23,6 +23,8 @@ public class KingSpriteAnimationRun extends EntitySpriteAnimationRun {
                 kingIdleAnimation.setPosition(king.getX(), king.getY());
                 kingIdleAnimation.getAndIncrement();
                 break;
+            case DIE:
+                break;
         }
     }
 }

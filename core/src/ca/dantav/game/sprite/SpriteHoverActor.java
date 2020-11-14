@@ -1,6 +1,7 @@
 package ca.dantav.game.sprite;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -40,7 +41,12 @@ public abstract class SpriteHoverActor extends SpriteActor {
 
                 boolean overlaps = StreamSupport.stream(playScreen.getCastleDefense().getEntityManager().getEntityList()).filter(Objects::nonNull).anyMatch((Entity e) -> overlaps(e));
 
+                if(interactable) {
+                    return;
+                }
+
                 if(overlaps) {
+                    playScreen.getCastleDefense().playSound(playScreen.getCastleDefense().getAssets().get("fail_sound", Sound.class));
                     remove();
                     return;
                 }

@@ -132,14 +132,6 @@
     "path": "images/castle5.png"
   },
   {
-    "name": "castle_banner",
-    "path": "images/banner.png"
-  },
-  {
-    "name": "barrel",
-    "path": "images/barrel.png"
-  },
-  {
     "name": "tower_logo",
     "path": "images/tower_sprite.png"
   },
@@ -286,5 +278,9 @@
   {
     "name": "explode_sound",
     "path": "audio/explode.mp3"
+  },
+  {
+    "name": "fail_sound",
+    "path": "audio/fail.wav"
   }
 ]

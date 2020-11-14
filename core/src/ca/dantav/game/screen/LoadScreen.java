@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Camera;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import ca.dantav.game.Assets;
 import ca.dantav.game.CastleDefense;
+import ca.dantav.game.sprite.SpriteActor;
 
 public class LoadScreen extends GameScreen {
 
@@ -22,7 +24,8 @@ public class LoadScreen extends GameScreen {
     /*
     The background sprite
      */
-    private Sprite background;
+    private Sprite logo;
+
 
     /**
      * Default constructor
@@ -33,17 +36,19 @@ public class LoadScreen extends GameScreen {
      */
     public LoadScreen(CastleDefense castleDefense) {
         super(castleDefense);
-        background = new Sprite(new Texture(Gdx.files.internal("images/tavtech.png")));
+        logo = new Sprite(new Texture(Gdx.files.internal("images/tav_tech_white.png")));
     }
 
     @Override
     public void start() {
-
+        SpriteActor actor = new SpriteActor(logo);
+        actor.setPosition(getStage().getWidth()/2 - (logo.getWidth()/2), (getStage().getHeight()/2) - (logo.getHeight()/2));
+        getStage().addActor(actor);
     }
 
     @Override
     public void dispose() {
-        background.getTexture().dispose();
+        logo.getTexture().dispose();
     }
 
     @Override
@@ -51,7 +56,7 @@ public class LoadScreen extends GameScreen {
         if(logoFloat < 1f) {
             float increment = logoFloat + 0.01f;
             logoFloat = (increment > 1f) ? 1f : increment;
-            background.setAlpha(logoFloat);
+            logo.setAlpha(logoFloat);
             return;
         }
 
@@ -65,7 +70,12 @@ public class LoadScreen extends GameScreen {
 
     @Override
     public Sprite getBackground() {
-        return background;
+        return null;
+    }
+
+    @Override
+    public Color getBackgroundColor() {
+        return Color.BLACK;
     }
 
     @Override
